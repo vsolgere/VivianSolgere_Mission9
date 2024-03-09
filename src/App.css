@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* This will create a responsive grid */
+  gap: 10px; /* Adjust the gap between items as needed */
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #ffffff; /* Or any color you prefer */
+  border: 1px solid #dddddd; /* Optional border */
+  border-radius: 8px; /* Optional rounded corners */
+  padding: 20px;
+  text-align: center; /* Center the text horizontally */
+}

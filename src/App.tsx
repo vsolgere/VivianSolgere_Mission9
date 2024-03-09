@@ -2,27 +2,28 @@ import React from "react";
 import "./App.css";
 import teamData from "./CollegeBasketballTeams.json";
 
+interface TeamProps {
+  school: string;
+  mascot: string;
+  location: string;
+}
+
 function App() {
   function Welcome() {
     return <h1>2024 March Madness Teams</h1>;
   }
 
-  interface TeamProps {
-    school: string;
-    mascot: string;
-    location: string;
-  }
-
   function TeamList() {
     return (
-      <div>
+      <div className="grid-container">
         {teamData.teams.map((team) => (
-          <Team
-            key={team.tid}
-            school={team.school}
-            mascot={team.name}
-            location={`${team.city}, ${team.state}`}
-          />
+          <div className="grid-item" key={team.tid}>
+            <Team
+              school={team.school}
+              mascot={team.name}
+              location={`${team.city}, ${team.state}`}
+            />
+          </div>
         ))}
       </div>
     );
